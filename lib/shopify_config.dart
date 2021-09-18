@@ -14,7 +14,7 @@ class ShopifyConfig {
   /// The version of the Storefront API.
   ///
   /// Default is set to 2020-04.
-  static String _storefrontApiVersion = '2020-04';
+  static String _storefrontApiVersion;
 
   /// Where to store the cache.
   ///
@@ -47,6 +47,12 @@ class ShopifyConfig {
         store: _cacheStore,
       ),
     );
+  }
+
+  static void removeConfig() {
+    _storeUrl = null;
+    _storefrontAccessToken = null;
+    _storefrontApiVersion = null;
   }
 
   static GraphQLClient _graphQLClient;
